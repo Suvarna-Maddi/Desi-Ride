@@ -1,0 +1,978 @@
+/* =========================================================
+   DESI RIDE – EXACT REGISTRATION PAGE SPLIT-SCREEN UI
+   ========================================================= */
+
+.reg-split-screen-root {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    140deg,
+    #FDFBF7 0%,
+    #F3F8F2 35%,
+    #E2EFF9 75%,
+    #D6E8F7 100%
+  );
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  padding: 20px 16px;
+}
+
+@media (min-width: 1024px) {
+  .reg-split-screen-root {
+    padding: 28px 44px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .reg-split-screen-root {
+    padding: 36px 72px;
+  }
+}
+
+/* Top-Right & Bottom-Left Corner Decorative Ribbons */
+.reg-corner-ribbon-top-right {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 130px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.reg-corner-ribbon-top-right svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.reg-corner-ribbon-bottom-left {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 230px;
+  height: 95px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.reg-corner-ribbon-bottom-left svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .reg-corner-ribbon-top-right {
+    width: 120px;
+    height: 75px;
+  }
+  .reg-corner-ribbon-bottom-left {
+    width: 140px;
+    height: 60px;
+  }
+}
+
+/* Main Split-Screen Container */
+.reg-split-inner-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (min-width: 1024px) {
+  .reg-split-inner-container {
+    display: grid;
+    grid-template-columns: 0.92fr 1.08fr;
+    align-items: stretch;
+    gap: 32px;
+    min-height: 720px;
+  }
+}
+
+/* =========================================================
+   LEFT SECTION – BRANDING, HEADING, HIGHLIGHTS & RURAL SCENE
+   ========================================================= */
+.reg-left-promo-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  padding: 8px 6px 0 6px;
+}
+
+@media (min-width: 1024px) {
+  .reg-left-promo-section {
+    padding: 16px 12px 0 16px;
+  }
+}
+
+.reg-left-top-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+.reg-brand-link {
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 1024px) {
+  .reg-brand-link {
+    margin-bottom: 34px;
+  }
+}
+
+.reg-brand-logo {
+  height: 54px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .reg-brand-logo {
+    height: 64px;
+  }
+}
+
+.reg-promo-main-heading {
+  font-size: clamp(28px, 3.6vw, 46px);
+  font-weight: 800;
+  line-height: 1.16;
+  color: #0B4624;
+  letter-spacing: -0.5px;
+}
+
+.reg-text-orange {
+  color: #EA7317;
+}
+
+.reg-heading-orange-underline {
+  width: 76px;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #F59E0B;
+  margin: 16px 0 24px 0;
+}
+
+@media (min-width: 1024px) {
+  .reg-heading-orange-underline {
+    margin: 18px 0 28px 0;
+  }
+}
+
+.reg-feature-highlights-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 1024px) {
+  .reg-feature-highlights-list {
+    gap: 18px;
+  }
+}
+
+.reg-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.reg-feature-icon-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #E7F5EC;
+  border: 1px solid #CBEAD5;
+  color: #0C6B37;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(12, 107, 55, 0.08);
+}
+
+.reg-feature-text {
+  font-size: clamp(15px, 1.5vw, 18.5px);
+  font-weight: 600;
+  color: #1F2937;
+}
+
+/* Bottom-Left Rural Countryside & Vehicles Illustration */
+.reg-left-scenic-illustration {
+  position: relative;
+  width: calc(100% + 24px);
+  margin-left: -12px;
+  margin-top: auto;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+@media (max-width: 1023px) {
+  .reg-left-scenic-illustration {
+    max-height: 210px;
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.reg-scenic-vehicles-img {
+  width: 100%;
+  height: 285px;
+  object-fit: cover;
+  object-position: right bottom;
+  display: block;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.7) 18%,
+    rgba(0, 0, 0, 1) 38%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.7) 18%,
+    rgba(0, 0, 0, 1) 38%
+  );
+}
+
+@media (max-width: 767px) {
+  .reg-scenic-vehicles-img {
+    height: 180px;
+  }
+}
+
+/* =========================================================
+   RIGHT SECTION – WHITE REGISTRATION CARD
+   ========================================================= */
+.reg-right-card-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.reg-white-card {
+  width: 100%;
+  max-width: 670px;
+  background-color: #FFFFFF;
+  border-radius: 26px;
+  border: 1px solid rgba(229, 231, 235, 0.85);
+  box-shadow: 0 18px 48px rgba(15, 41, 26, 0.09), 0 4px 14px rgba(0, 0, 0, 0.03);
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 640px) {
+  .reg-white-card {
+    padding: 36px 42px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .reg-white-card {
+    padding: 40px 52px;
+  }
+}
+
+/* Card Header */
+.reg-card-top-header {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.reg-card-main-title {
+  font-size: clamp(24px, 2.6vw, 34px);
+  font-weight: 800;
+  color: #0E3F24;
+  letter-spacing: -0.4px;
+  line-height: 1.2;
+}
+
+.reg-card-subtitle {
+  font-size: clamp(13.5px, 1.4vw, 16px);
+  font-weight: 500;
+  color: #374151;
+  margin-top: 6px;
+}
+
+/* =========================================================
+   3-STEP PROGRESS INDICATOR (1 Choose Role — 2 Your Details — 3 Verification)
+   ========================================================= */
+.reg-progress-container {
+  width: 100%;
+  margin: 0 auto 26px auto;
+  padding: 0 4px;
+}
+
+.reg-progress-track {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.reg-progress-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  z-index: 2;
+  min-width: 78px;
+}
+
+@media (max-width: 380px) {
+  .reg-progress-node {
+    min-width: 64px;
+  }
+}
+
+.reg-progress-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 15px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #D8DCE0;
+  color: #4B5563;
+  transition: all 0.2s ease;
+}
+
+.reg-progress-node.active .reg-progress-circle,
+.reg-progress-node.completed .reg-progress-circle {
+  background-color: #0B6A37;
+  color: #FFFFFF;
+  box-shadow: 0 3px 10px rgba(11, 106, 55, 0.25);
+}
+
+.reg-progress-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  white-space: nowrap;
+}
+
+@media (max-width: 380px) {
+  .reg-progress-label {
+    font-size: 11.5px;
+  }
+}
+
+.reg-progress-node.active .reg-progress-label,
+.reg-progress-node.completed .reg-progress-label {
+  color: #0B6A37;
+  font-weight: 700;
+}
+
+.reg-progress-line {
+  flex: 1;
+  height: 2px;
+  background-color: #D1D5DB;
+  margin-top: 16px;
+  margin-left: -6px;
+  margin-right: -6px;
+  transition: background-color 0.25s ease;
+}
+
+.reg-progress-line.line-completed {
+  background-color: #0B6A37;
+}
+
+/* =========================================================
+   STEP 1: ROLE SELECTION CARDS
+   ========================================================= */
+.reg-step-one-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.reg-step-section-heading {
+  font-size: clamp(17px, 1.8vw, 20px);
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 14px;
+}
+
+.reg-role-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.reg-role-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 20px 12px 16px;
+  border-radius: 16px;
+  border: 1.5px solid #E5E7EB;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.025);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.18s ease;
+  min-height: 98px;
+}
+
+.reg-role-card:hover {
+  border-color: #65A37E;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(11, 106, 55, 0.08);
+}
+
+.reg-role-card.selected {
+  background-color: #EDF8F0;
+  border-color: #3B8C58;
+  box-shadow: 0 4px 14px rgba(11, 106, 55, 0.1);
+}
+
+.reg-role-illustration-wrap {
+  width: 92px;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+@media (max-width: 420px) {
+  .reg-role-card {
+    padding: 10px 14px;
+    gap: 12px;
+  }
+  .reg-role-illustration-wrap {
+    width: 72px;
+    height: 64px;
+  }
+}
+
+.reg-role-text-col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.reg-role-title {
+  font-size: clamp(16px, 1.7vw, 19px);
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.25;
+}
+
+.reg-role-desc {
+  font-size: clamp(12.5px, 1.3vw, 14.5px);
+  font-weight: 500;
+  color: #374151;
+  line-height: 1.35;
+}
+
+.reg-role-radio-indicator {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #BDBDBD;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+
+.reg-role-radio-indicator.checked {
+  background-color: #15803D;
+  border-color: #15803D;
+}
+
+/* Primary Full-Width Green Continue Button */
+.reg-continue-cta-btn {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #0B6132;
+  color: #FFFFFF;
+  font-size: 17px;
+  font-weight: 700;
+  padding: 15px 28px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(11, 97, 50, 0.26);
+  transition: background-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.reg-continue-cta-btn:hover:not(:disabled) {
+  background-color: #084D27;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(11, 97, 50, 0.34);
+}
+
+.reg-continue-cta-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.reg-bottom-login-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #F1F5F9;
+  margin: 22px 0 16px 0;
+}
+
+.reg-bottom-login-prompt {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.reg-inline-login-link {
+  background: none;
+  border: none;
+  color: #0B6A37;
+  font-size: 15.5px;
+  font-weight: 800;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+.reg-inline-login-link:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   STEP 2: PERSONAL & ROLE-SPECIFIC DETAILS FORM
+   ========================================================= */
+.reg-step-two-form {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.reg-step-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.reg-selected-role-pill {
+  font-size: 12px;
+  font-weight: 800;
+  background-color: #E8F6E8;
+  color: #0B6A37;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid #BBF7D0;
+}
+
+.reg-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.reg-form-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1F2937;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.reg-optional-tag {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #6B7280;
+}
+
+.reg-form-input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 11px;
+  border: 1.5px solid #D1D5DB;
+  font-size: 14px;
+  font-family: inherit;
+  color: #111827;
+  background-color: #FFFFFF;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.reg-form-input:focus {
+  border-color: #0B6A37;
+  box-shadow: 0 0 0 3px rgba(11, 106, 55, 0.12);
+}
+
+.reg-form-input.input-error {
+  border-color: #DC2626;
+  background-color: #FEF2F2;
+}
+
+.reg-field-error-text {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #DC2626;
+}
+
+.reg-password-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.reg-password-input {
+  padding-right: 38px;
+}
+
+.reg-password-eye-btn {
+  position: absolute;
+  right: 11px;
+  background: none;
+  border: none;
+  color: #6B7280;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.reg-grid-2-cols {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.reg-grid-3-cols {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 560px) {
+  .reg-grid-2-cols {
+    grid-template-columns: 1fr 1fr;
+  }
+  .reg-grid-3-cols {
+    grid-template-columns: 1.1fr 1.1fr 0.8fr;
+  }
+}
+
+.reg-step-action-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.reg-back-outline-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 13px 22px;
+  border-radius: 9999px;
+  border: 1.5px solid #0B6132;
+  background-color: #FFFFFF;
+  color: #0B6132;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.reg-back-outline-btn:hover:not(:disabled) {
+  background-color: #EDF8F0;
+}
+
+/* =========================================================
+   STEP 3: OTP & EMAIL VERIFICATION
+   ========================================================= */
+.reg-step-three-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.reg-alert-banner {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.reg-alert-error {
+  background-color: #FEF2F2;
+  border: 1px solid #FECACA;
+  color: #B91C1C;
+}
+
+.reg-alert-success {
+  background-color: #F0FDF4;
+  border: 1px solid #BBF7D0;
+  color: #065F32;
+}
+
+.reg-gateway-dispatch-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border-radius: 11px;
+  background-color: #ECFDF5;
+  border: 1px dashed #10B981;
+  font-size: 12.5px;
+  color: #065F46;
+}
+
+.reg-otp-code-pill {
+  background-color: #065F46;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.reg-autofill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #065F46;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 11.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.reg-autofill-btn:hover {
+  background-color: #047857;
+  transform: translateY(-1px);
+}
+
+.reg-verification-box {
+  border: 1.5px solid #E5E7EB;
+  border-radius: 16px;
+  padding: 14px 16px;
+  background-color: #F9FAFB;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.reg-verification-box.verified-box {
+  background-color: #F0FDF4;
+  border-color: #86EFAC;
+}
+
+.reg-verify-box-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.reg-verify-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.reg-verify-title-group h4 {
+  font-size: 14.5px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.reg-verify-title-group p {
+  font-size: 12.5px;
+  color: #4B5563;
+}
+
+.reg-verify-status-pill {
+  font-size: 11.5px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.reg-verify-status-pill.verified {
+  background-color: #15803D;
+  color: #FFFFFF;
+}
+
+.reg-verify-status-pill.pending {
+  background-color: #FEF3C7;
+  color: #B45309;
+}
+
+/* 6-Digit OTP Input Boxes */
+.reg-otp-boxes {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  max-width: 340px;
+}
+
+.reg-otp-digit-input {
+  width: 100%;
+  height: 44px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 800;
+  color: #0B4624;
+  background-color: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.reg-otp-digit-input:focus {
+  border-color: #0B6A37;
+  box-shadow: 0 0 0 3px rgba(11, 106, 55, 0.15);
+}
+
+.reg-otp-actions-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.reg-otp-timer-info {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #4B5563;
+}
+
+.reg-otp-btn-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.reg-resend-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #0B6A37;
+  cursor: pointer;
+}
+
+.reg-resend-link-btn:disabled {
+  color: #9CA3AF;
+  cursor: not-allowed;
+}
+
+.reg-verify-action-btn {
+  background-color: #0B6132;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 999px;
+  padding: 7px 16px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.reg-verify-action-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.reg-email-verify-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.reg-email-helper-text {
+  font-size: 12px;
+  color: #4B5563;
+}
+
+.reg-verify-email-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #FFFFFF;
+  color: #0B6132;
+  border: 1.5px solid #0B6132;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.reg-verify-email-link-btn:hover {
+  background-color: #EDF8F0;
+}
+
+.reg-consent-checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 4px 2px;
+}
+
+.reg-checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 12.5px;
+  color: #374151;
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+.reg-checkbox-row input {
+  margin-top: 3px;
+  accent-color: #0B6132;
+}

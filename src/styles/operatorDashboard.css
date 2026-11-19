@@ -1,0 +1,1032 @@
+/* ==========================================================================
+   DESI RIDE – OPERATOR DASHBOARD STYLES (EXACT REFERENCE SCREENSHOT MATCH)
+   ========================================================================== */
+
+.op-dashboard-root {
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  background-color: #F6F7F4;
+  color: #111827;
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  padding-bottom: calc(132px + env(safe-area-inset-bottom, 0px));
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.op-dashboard-container {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  padding: 0 clamp(18px, 3vw, 44px) 36px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(18px, 1.8vw, 24px);
+}
+
+/* ==========================================================================
+   1. OPERATOR HEADER
+   ========================================================================== */
+.op-header {
+  position: sticky;
+  top: 0;
+  z-index: 95;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #EAECE8;
+}
+
+.op-header-inner {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  padding: 12px clamp(18px, 3vw, 44px);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.op-header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.op-hamburger-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: none;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #111827;
+  transition: background-color 0.15s ease;
+}
+
+.op-hamburger-btn:hover {
+  background-color: #F1F5F2;
+}
+
+.op-brand-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.op-brand-logo-img {
+  height: clamp(44px, 4.2vw, 60px);
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.op-brand-logo-svg {
+  width: clamp(54px, 4.4vw, 66px);
+  height: clamp(44px, 3.6vw, 52px);
+  flex-shrink: 0;
+}
+
+.op-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.06;
+}
+
+.op-brand-title {
+  font-size: clamp(24px, 2.1vw, 31px);
+  font-weight: 800;
+  letter-spacing: -0.6px;
+}
+
+.op-brand-green {
+  color: #085C30;
+}
+
+.op-brand-gold {
+  color: #BA7818;
+}
+
+.op-brand-subtitle {
+  font-size: clamp(11px, 0.85vw, 13px);
+  font-weight: 600;
+  color: #374151;
+  margin-top: 2px;
+}
+
+.op-header-right {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 1.6vw, 24px);
+}
+
+.op-bell-btn {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.op-bell-btn:hover {
+  background-color: #F1F5F2;
+}
+
+.op-bell-dot {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background-color: #DC2626;
+  border: 2px solid #FFFFFF;
+}
+
+.op-profile-cluster {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.op-avatar-img {
+  width: clamp(48px, 3.8vw, 58px);
+  height: clamp(48px, 3.8vw, 58px);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #E5E7EB;
+  flex-shrink: 0;
+}
+
+.op-profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.op-profile-name {
+  font-size: clamp(16px, 1.25vw, 19px);
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.1;
+}
+
+.op-profile-role {
+  font-size: clamp(12.5px, 0.95vw, 14px);
+  font-weight: 500;
+  color: #4B5563;
+  line-height: 1.15;
+}
+
+.op-availability-pill {
+  margin-top: 3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: none;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.op-availability-pill.online {
+  background-color: #DCF4E0;
+  color: #085E32;
+}
+
+.op-availability-pill.offline {
+  background-color: #FEE2E2;
+  color: #991B1B;
+}
+
+.op-status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.op-availability-pill.online .op-status-dot {
+  background-color: #16A34A;
+}
+
+.op-availability-pill.offline .op-status-dot {
+  background-color: #DC2626;
+}
+
+/* ==========================================================================
+   2. WELCOME BANNER
+   ========================================================================== */
+.op-welcome-banner {
+  position: relative;
+  width: 100%;
+  min-height: clamp(185px, 15.5vw, 236px);
+  border-radius: 24px;
+  overflow: hidden;
+  background: linear-gradient(
+    98deg,
+    #EBF7E5 0%,
+    #F3FAEE 36%,
+    #E3F3DA 62%,
+    #CDE8BF 100%
+  );
+  border: 1px solid #D5EAC9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(22px, 2.2vw, 34px) clamp(26px, 3vw, 44px);
+  box-sizing: border-box;
+  margin-top: 8px;
+}
+
+.op-welcome-text {
+  position: relative;
+  z-index: 3;
+  max-width: 52%;
+}
+
+.op-welcome-heading {
+  font-size: clamp(28px, 2.7vw, 42px);
+  font-weight: 800;
+  color: #074725;
+  line-height: 1.12;
+  letter-spacing: -0.7px;
+  margin: 0 0 10px;
+}
+
+.op-welcome-sub {
+  font-size: clamp(16px, 1.3vw, 21px);
+  font-weight: 700;
+  color: #1F2937;
+  margin: 0;
+}
+
+.op-welcome-art-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 58%;
+  z-index: 2;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.op-welcome-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  display: block;
+}
+
+/* ==========================================================================
+   3. FOUR NAVIGATION TABS (MY TASKS | ACTIVE JOBS | UPCOMING | HISTORY)
+   ========================================================================== */
+.op-tabs-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(10px, 1.2vw, 16px);
+}
+
+.op-tab-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  height: clamp(46px, 3.6vw, 54px);
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid #E5E7EB;
+  background-color: #EFEFEF;
+  color: #111827;
+  font-size: clamp(14.5px, 1.1vw, 17px);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.16s ease;
+  white-space: nowrap;
+}
+
+.op-tab-pill:hover {
+  background-color: #E4E7E4;
+}
+
+.op-tab-pill.active {
+  background: linear-gradient(180deg, #0D6837 0%, #074E28 100%);
+  color: #FFFFFF;
+  border-color: #074E28;
+  box-shadow: 0 4px 12px rgba(7, 78, 40, 0.22);
+}
+
+/* ==========================================================================
+   4. CURRENT JOB CARD + TIMELINE + ACTION BUTTONS
+   ========================================================================== */
+.op-current-job-card {
+  width: 100%;
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  border: 1px solid #E2E6E2;
+  box-shadow: 0 8px 26px rgba(17, 24, 39, 0.05);
+  overflow: hidden;
+}
+
+.op-job-card-topbar {
+  background: linear-gradient(90deg, #167A3E 0%, #208B4A 100%);
+  padding: 13px clamp(18px, 2vw, 26px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.op-job-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #FFFFFF;
+  font-size: clamp(17px, 1.35vw, 21px);
+  font-weight: 800;
+}
+
+.op-topbar-white-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+}
+
+.op-job-status-pill {
+  padding: 6px 18px;
+  border-radius: 999px;
+  font-size: clamp(13.5px, 1vw, 15.5px);
+  font-weight: 800;
+  background-color: #D7F3DC;
+  color: #074E28;
+}
+
+.op-job-status-pill.paused {
+  background-color: #FEF3C7;
+  color: #92400E;
+}
+
+.op-job-card-body {
+  padding: clamp(18px, 2vw, 26px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(18px, 1.8vw, 24px);
+}
+
+/* 3-Column Job Info Grid: Photo | Details | Map Preview */
+.op-job-main-grid {
+  display: grid;
+  grid-template-columns: minmax(210px, 27%) 1fr minmax(230px, 31%);
+  gap: clamp(16px, 1.8vw, 24px);
+  align-items: stretch;
+}
+
+.op-job-photo-box {
+  width: 100%;
+  min-height: 185px;
+  border-radius: 18px;
+  overflow: hidden;
+  background-color: #F3F4F6;
+}
+
+.op-job-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.op-job-details-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.op-job-vehicle-title {
+  font-size: clamp(21px, 1.7vw, 26px);
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 2px;
+  letter-spacing: -0.4px;
+}
+
+.op-job-detail-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: clamp(14.5px, 1.08vw, 17px);
+  font-weight: 500;
+  color: #1F2937;
+}
+
+.op-job-detail-row strong {
+  font-weight: 700;
+}
+
+/* Map Preview Widget */
+.op-job-map-box {
+  position: relative;
+  width: 100%;
+  min-height: 185px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #E5E7EB;
+  background-color: #EEF2EE;
+  cursor: pointer;
+}
+
+/* Horizontal Job Progress Timeline (5 Stages: Assigned -> On The Way -> Arrived -> In Progress -> Completed) */
+.op-timeline-wrapper {
+  width: 100%;
+  padding: 14px 12px 10px;
+  box-sizing: border-box;
+  background-color: #FAFCFA;
+  border: 1px solid #E7ECE8;
+  border-radius: 16px;
+  overflow-x: auto;
+}
+
+.op-timeline-track {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(110px, 1fr));
+  position: relative;
+  min-width: 540px;
+}
+
+.op-timeline-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 4px;
+}
+
+/* Connecting Line Between Timeline Nodes */
+.op-timeline-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: calc(50% + 18px);
+  width: calc(100% - 36px);
+  height: 3.5px;
+  background-color: #D1D5DB;
+  z-index: 1;
+}
+
+.op-timeline-step.line-completed:not(:last-child)::after {
+  background-color: #1E8E3E;
+}
+
+.op-timeline-node {
+  position: relative;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  background-color: #CBD5E1;
+  color: #FFFFFF;
+  transition: all 0.2s ease;
+}
+
+.op-timeline-node.done {
+  background-color: #1E8E3E;
+  color: #FFFFFF;
+}
+
+.op-timeline-node.current {
+  background-color: #FFFFFF;
+  border: 3px solid #15733B;
+}
+
+.op-timeline-node.current.paused {
+  background-color: #FEF3C7;
+  border: 3px solid #D97706;
+}
+
+.op-node-inner-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #15733B;
+}
+
+.op-timeline-node.current.paused .op-node-inner-dot {
+  background-color: #D97706;
+}
+
+.op-node-upcoming-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+}
+
+.op-timeline-title {
+  font-size: clamp(14px, 1.05vw, 16.5px);
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.2;
+}
+
+.op-timeline-step.upcoming .op-timeline-title {
+  color: #4B5563;
+  font-weight: 600;
+}
+
+.op-timeline-time {
+  font-size: clamp(12.5px, 0.95vw, 14.5px);
+  font-weight: 500;
+  color: #374151;
+  margin-top: 3px;
+}
+
+/* Action Buttons Bar (Open in Maps | Start Work / Accept | Pause | Complete Job) */
+.op-action-btns-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(10px, 1.2vw, 16px);
+  padding-top: 4px;
+}
+
+.op-action-btn {
+  height: clamp(48px, 3.8vw, 56px);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: clamp(14.5px, 1.08vw, 17px);
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+  padding: 0 16px;
+  white-space: nowrap;
+}
+
+.op-action-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.op-action-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.op-btn-maps {
+  background-color: #DCF3DE;
+  color: #0B532B;
+  border: 1px solid #C2E8C6;
+}
+
+.op-btn-start {
+  background: linear-gradient(180deg, #0D6837 0%, #074E28 100%);
+  color: #FFFFFF;
+  border: none;
+  box-shadow: 0 4px 12px rgba(7, 78, 40, 0.22);
+}
+
+.op-btn-pause {
+  background-color: #FDE69E;
+  color: #3B2307;
+  border: 1px solid #F7D674;
+}
+
+.op-btn-complete {
+  background-color: #FFFFFF;
+  color: #B91C1C;
+  border: 1.8px solid #DC2626;
+}
+
+/* ==========================================================================
+   5. FOUR DASHBOARD SUMMARY CARDS
+   ========================================================================== */
+.op-summary-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 1.4vw, 20px);
+}
+
+.op-summary-card {
+  position: relative;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  border: 1px solid #E5E7EB;
+  padding: clamp(16px, 1.6vw, 22px);
+  box-shadow: 0 4px 14px rgba(17, 24, 39, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: clamp(104px, 8.8vw, 128px);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.op-summary-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(17, 24, 39, 0.07);
+}
+
+.op-summary-badge-top {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #16803C;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.op-summary-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.op-summary-title {
+  font-size: clamp(15px, 1.15vw, 18px);
+  font-weight: 700;
+  color: #111827;
+}
+
+.op-summary-value {
+  font-size: clamp(20px, 1.65vw, 26px);
+  font-weight: 800;
+  color: #075B32;
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   6. UPCOMING JOBS SECTION
+   ========================================================================== */
+.op-upcoming-section {
+  width: 100%;
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  border: 1px solid #E5E7EB;
+  padding: clamp(18px, 2vw, 26px);
+  box-shadow: 0 6px 20px rgba(17, 24, 39, 0.04);
+  box-sizing: border-box;
+}
+
+.op-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.op-section-title {
+  font-size: clamp(20px, 1.65vw, 25px);
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+}
+
+.op-view-all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  font-size: clamp(14.5px, 1.08vw, 16.5px);
+  font-weight: 700;
+  color: #111827;
+  cursor: pointer;
+}
+
+.op-upcoming-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.op-upcoming-item {
+  background-color: #FBFBF9;
+  border: 1px solid #EAECE8;
+  border-radius: 18px;
+  padding: 14px 18px;
+  display: grid;
+  grid-template-columns: 126px 1.2fr 1fr auto;
+  align-items: center;
+  gap: 18px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.op-upcoming-item:hover {
+  border-color: #8AC978;
+  background-color: #F5FAF4;
+}
+
+.op-upcoming-thumb {
+  width: 126px;
+  height: 86px;
+  border-radius: 12px;
+  object-fit: contain;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  padding: 4px;
+  box-sizing: border-box;
+  display: block;
+}
+
+.op-upcoming-info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.op-upcoming-title-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.op-upcoming-veh-name {
+  font-size: clamp(16.5px, 1.3vw, 20px);
+  font-weight: 800;
+  color: #111827;
+}
+
+.op-work-cat-pill {
+  padding: 3px 12px;
+  border-radius: 999px;
+  background-color: #E2F4DF;
+  color: #085E32;
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.op-upcoming-meta-line {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: clamp(13.5px, 1vw, 15.5px);
+  color: #374151;
+}
+
+.op-upcoming-schedule-col {
+  border-left: 1px solid #E5E7EB;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.op-upcoming-right-col {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.op-upcoming-status-badge {
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-weight: 700;
+}
+
+.op-upcoming-status-badge.scheduled {
+  background-color: #FDE9B2;
+  color: #5C3A08;
+}
+
+.op-upcoming-status-badge.upcoming {
+  background-color: #DBEAFE;
+  color: #1E3A8A;
+}
+
+/* ==========================================================================
+   7. FIXED BOTTOM NAVIGATION BAR
+   ========================================================================== */
+.op-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 98;
+  background-color: #FFFFFF;
+  border-radius: 26px 26px 0 0;
+  border-top: 1px solid #E5E7EB;
+  box-shadow: 0 -6px 26px rgba(17, 24, 39, 0.08);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.op-bottom-nav-inner {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  height: 76px;
+  padding: 0 clamp(18px, 4vw, 60px);
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: center;
+}
+
+.op-nav-btn {
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  color: #1F2937;
+  font-size: clamp(13px, 0.98vw, 15px);
+  font-weight: 600;
+  padding: 6px 0;
+}
+
+.op-nav-btn.active {
+  color: #087A3E;
+  font-weight: 800;
+}
+
+.op-nav-drive-wrap {
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  height: 100%;
+}
+
+.op-nav-drive-circle {
+  position: absolute;
+  top: -24px;
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #0D6B38 0%, #064B26 100%);
+  border: 5px solid #FFFFFF;
+  box-shadow: 0 6px 20px rgba(6, 75, 38, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  color: #FFFFFF;
+  font-size: 13.5px;
+  font-weight: 800;
+  transition: transform 0.15s ease;
+}
+
+.op-nav-drive-wrap:hover .op-nav-drive-circle {
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* ==========================================================================
+   8. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .op-job-main-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .op-job-map-box {
+    grid-column: 1 / -1;
+    min-height: 170px;
+  }
+
+  .op-upcoming-item {
+    grid-template-columns: 110px 1fr auto;
+  }
+
+  .op-upcoming-schedule-col {
+    grid-column: 2 / 3;
+    border-left: none;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .op-dashboard-container,
+  .op-header-inner {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .op-brand-subtitle {
+    display: none;
+  }
+
+  .op-welcome-banner {
+    padding: 20px 18px;
+    min-height: 165px;
+  }
+
+  .op-welcome-text {
+    max-width: 62%;
+  }
+
+  .op-tabs-grid {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .op-tab-pill {
+    flex: 0 0 auto;
+  }
+
+  .op-job-main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .op-action-btns-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .op-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .op-upcoming-item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .op-upcoming-thumb {
+    width: 100%;
+    height: 150px;
+  }
+}
+
+@media (max-width: 420px) {
+  .op-header-inner {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .op-brand-logo-img {
+    height: 38px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .op-action-btns-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .op-nav-drive-circle {
+    width: 64px;
+    height: 64px;
+    top: -18px;
+    font-size: 12px;
+  }
+}
+

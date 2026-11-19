@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  desiride-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: desiride_production
+    restart: unless-stopped
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=production
+      - PORT=4000
+      - JWT_SECRET=desiride-production-cryptographic-jwt-secret-replace-me-2026
+      - DESIRIDE_DB_PATH=/app/server/data/desiride.db
+    volumes:
+      - desiride_db_data:/app/server/data
+
+volumes:
+  desiride_db_data:
+    driver: local
