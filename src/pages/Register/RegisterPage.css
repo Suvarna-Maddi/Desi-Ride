@@ -842,6 +842,99 @@
 }
 
 /* 6-Digit OTP Input Boxes */
+.reg-otp-hint-banner {
+  background: #F0FDF4;
+  border: 1.5px solid #86EFAC;
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.reg-otp-hint-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.reg-otp-hint-tag {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #166534;
+}
+
+.reg-otp-provider-badge {
+  font-size: 11px;
+  background: #DCFCE7;
+  color: #15803D;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid #BBF7D0;
+}
+
+.reg-otp-hint-body {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.reg-otp-hint-text {
+  font-size: 13px;
+  color: #374151;
+}
+
+.reg-otp-highlight-number {
+  font-size: 20px;
+  font-family: monospace;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: #065F46;
+  background: #DCFCE7;
+  padding: 2px 10px;
+  border-radius: 8px;
+  border: 1px solid #86EFAC;
+}
+
+.reg-autofill-action-btn {
+  background: #059669;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.reg-autofill-action-btn:hover {
+  background: #047857;
+  transform: translateY(-1px);
+}
+
+.reg-sms-carrier-info {
+  font-size: 11.5px;
+  color: #4B5563;
+  line-height: 1.4;
+  border-top: 1px dashed #BBF7D0;
+  padding-top: 6px;
+  margin-top: 2px;
+}
+
+.reg-sms-carrier-info code {
+  background: #E2E8F0;
+  color: #1E293B;
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 11px;
+}
+
 .reg-otp-boxes {
   display: grid;
   grid-template-columns: repeat(6, 1fr);

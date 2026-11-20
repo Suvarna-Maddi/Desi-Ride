@@ -282,6 +282,39 @@ export const Verification: React.FC<VerificationProps> = ({
 
         {!isMobileVerified && (
           <>
+            <div className="reg-otp-hint-banner">
+              <div className="reg-otp-hint-header">
+                <span className="reg-otp-hint-tag">⚡ Active Verification Code</span>
+                <span className="reg-otp-provider-badge">
+                  {dispatchedCodeNotice ? 'Generated' : 'Simulated'}
+                </span>
+              </div>
+              <div className="reg-otp-hint-body">
+                <span className="reg-otp-hint-text">
+                  Your OTP for <strong>+91 {mobile}</strong> is:
+                </span>
+                <strong className="reg-otp-highlight-number">
+                  {dispatchedCodeNotice || '123456'}
+                </strong>
+                <button
+                  type="button"
+                  className="reg-autofill-action-btn"
+                  onClick={() => {
+                    const code = dispatchedCodeNotice || '123456';
+                    setOtp(code);
+                    setStatusMessage(`Auto-filled OTP: ${code}`);
+                  }}
+                >
+                  ⚡ Auto-Fill Code
+                </button>
+              </div>
+              <div className="reg-sms-carrier-info">
+                <span>
+                  ℹ️ <em>To deliver live SMS via cellular network to your physical handset, add <code>FAST2SMS_API_KEY</code> into <code>.env</code>.</em>
+                </span>
+              </div>
+            </div>
+
             <OTPInput
               value={otp}
               onChange={setOtp}
